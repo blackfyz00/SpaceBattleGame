@@ -1,8 +1,8 @@
-﻿using System.Numerics;
+﻿namespace SpaceBattle.Lib;
+
+using System.Numerics;
 using System.Linq;
 using System;
-
-namespace SpaceBattle.Lib;
 
 public interface ICommand
 {
