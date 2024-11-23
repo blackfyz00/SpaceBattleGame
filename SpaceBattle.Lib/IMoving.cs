@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 
 namespace SpaceBattle.Lib;
@@ -17,7 +16,7 @@ public interface IMovingObject
 
 public class Move : ICommand
 {
-    IMovingObject MovingObject;
+    readonly IMovingObject MovingObject;
 
     public Move(IMovingObject MovingObject)
     {
@@ -33,7 +32,7 @@ public class Move : ICommand
 
 public class Vector
 {
-    int[] coordinates;
+    private int[] coordinates;
 
     public Vector(params int[] coordinates)
     {
@@ -59,9 +58,11 @@ public class Vector
             if (coordinates.Length != other.coordinates.Length)
             {
                 return false;
+            
             }
             var result = coordinates.Zip(other.coordinates, (x, y) => x == y).ToArray();
             return result.All(x => x);
+        
         }
         return false;
     }

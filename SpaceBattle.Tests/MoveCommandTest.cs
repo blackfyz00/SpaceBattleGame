@@ -6,7 +6,7 @@ namespace SpaceBattle.Tests;
 public class MoveCommandTest
 {
     [Fact]
-    public void TestPositive()
+    static public void TestPositive()
     {
         //arrange
         var MovingObject = new Mock<IMovingObject>();
